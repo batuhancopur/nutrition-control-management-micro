@@ -5,7 +5,7 @@ import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.common.ex
 
 import java.util.List;
 
-public interface PatientPort {
+public interface PatientInfoPort {
     void createPatient(Patient patient);
 
     Patient getPatient(Long patientGuid) throws DataNotFoundException;

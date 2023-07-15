@@ -3,7 +3,7 @@ package com.batuhancopur.nutritioncontrolmanagementmicro.domain.patient;
 import com.batuhancopur.nutritioncontrolmanagementmicro.domain.common.command.VoidCommandHandler;
 import com.batuhancopur.nutritioncontrolmanagementmicro.domain.patient.command.CreatePatientCommand;
 import com.batuhancopur.nutritioncontrolmanagementmicro.domain.patient.model.Patient;
-import com.batuhancopur.nutritioncontrolmanagementmicro.domain.patient.port.PatientPort;
+import com.batuhancopur.nutritioncontrolmanagementmicro.domain.patient.port.PatientInfoPort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class CreatePatientHandler implements VoidCommandHandler<CreatePatientCommand> {
 
-    private final PatientPort patientPort;
+    private final PatientInfoPort patientInfoPort;
     @Override
     public void handle(CreatePatientCommand command) {
 
@@ -24,7 +24,7 @@ public class CreatePatientHandler implements VoidCommandHandler<CreatePatientCom
                 .packageInfo(command.getPackageInfo())
                 .build();
 
-        patientPort.createPatient(patient);
+        patientInfoPort.createPatient(patient);
     }
 
 

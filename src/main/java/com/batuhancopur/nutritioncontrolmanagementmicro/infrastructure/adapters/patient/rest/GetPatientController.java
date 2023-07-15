@@ -13,8 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/patient")
-@Tag(name = "Patient")
+@RequestMapping("api/patient/info")
+@Tag(name = "Patient Info")
 @RequiredArgsConstructor
 public class GetPatientController {
 

@@ -2,10 +2,8 @@ package com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.adapters
 
 import com.batuhancopur.nutritioncontrolmanagementmicro.domain.common.command.VoidCommandHandler;
 import com.batuhancopur.nutritioncontrolmanagementmicro.domain.patient.command.CreatePatientCommand;
-import com.batuhancopur.nutritioncontrolmanagementmicro.domain.patient.model.Patient;
-import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.adapters.patient.jpa.PatientDataAdapter;
 import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.adapters.patient.rest.dto.CreatePatientRequest;
-import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.common.utils.DateUtils;
+import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.common.exception.DataNotFoundException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -16,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/patient")
-@Tag(name = "Patient")
+@RequestMapping("api/patient/info")
+@Tag(name = "Patient Info")
 @RequiredArgsConstructor
 public class CreatePatientController {
 
@@ -26,7 +24,7 @@ public class CreatePatientController {
     @Operation(summary = "Create new patient record")
     @ApiResponse(responseCode = "201")
     @PostMapping("/create")
-    public void createPatient(@RequestBody CreatePatientRequest request) {
+    public void createPatient(@RequestBody CreatePatientRequest request) throws DataNotFoundException {
         createPatientHandler.handle(toCommand(request));
     }
 
