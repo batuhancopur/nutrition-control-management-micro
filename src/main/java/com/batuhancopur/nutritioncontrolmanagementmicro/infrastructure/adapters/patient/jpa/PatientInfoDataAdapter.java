@@ -2,7 +2,7 @@ package com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.adapters
 
 import com.batuhancopur.nutritioncontrolmanagementmicro.domain.common.exception.PatientException;
 import com.batuhancopur.nutritioncontrolmanagementmicro.domain.patient.model.Patient;
-import com.batuhancopur.nutritioncontrolmanagementmicro.domain.patient.port.PatientPort;
+import com.batuhancopur.nutritioncontrolmanagementmicro.domain.patient.port.PatientInfoPort;
 import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.adapters.patient.jpa.entity.PatientInfoEntity;
 import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.adapters.patient.jpa.repository.PatientInfoRepository;
 import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.common.exception.DataNotFoundException;
@@ -10,19 +10,15 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
 
 @Service
 @RequiredArgsConstructor
-public class PatientDataAdapter implements PatientPort {
+public class PatientInfoDataAdapter implements PatientInfoPort {
 
     private final PatientInfoRepository repository;
 
     @Override
     public void createPatient(Patient patient) {
-
 
         PatientInfoEntity entity = PatientInfoEntity.builder()
                 .status(Boolean.TRUE)
@@ -57,7 +53,6 @@ public class PatientDataAdapter implements PatientPort {
 
     @Override
     public List<Patient> getAllPatients() {
-
         List<PatientInfoEntity> entityList = repository.findAll();
 
         return entityList.stream().map(ptn -> Patient.builder()

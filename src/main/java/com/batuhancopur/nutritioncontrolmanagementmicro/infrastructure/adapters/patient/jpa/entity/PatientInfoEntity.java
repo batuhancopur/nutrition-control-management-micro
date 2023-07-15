@@ -1,9 +1,12 @@
 package com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.adapters.patient.jpa.entity;
 
+import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.adapters.measurement.jpa.entity.PatientMeasurementEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
+
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -39,5 +42,9 @@ public class PatientInfoEntity {
 
     @Column(name = "PACKAGE_INFO", length = 2, nullable = false)
     private Integer packageInfo;
+
+    @OneToMany(mappedBy = "patientInfoEntity", cascade = CascadeType.ALL,
+            orphanRemoval = true, fetch = FetchType.LAZY, targetEntity = PatientMeasurementEntity.class)
+    private List<PatientMeasurementEntity> patientMeasurementEntity;
 
 }

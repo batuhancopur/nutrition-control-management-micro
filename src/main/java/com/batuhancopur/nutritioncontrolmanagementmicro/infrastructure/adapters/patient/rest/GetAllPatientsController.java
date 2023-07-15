@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/patient")
-@Tag(name = "Patient")
+@RequestMapping("api/patient/info")
+@Tag(name = "Patient Info")
 @RequiredArgsConstructor
 public class GetAllPatientsController {
 

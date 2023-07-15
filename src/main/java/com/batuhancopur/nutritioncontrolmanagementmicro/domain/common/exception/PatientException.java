@@ -9,5 +9,8 @@ public class PatientException {
     public static final String INVALID_PHONE_NUMBER = "Telefon numarasi gecersiz.";
     public static final String INVALID_EMAIL_ADDRESS = "Mail adresi gecersiz.";
     public static final String PATIENT_NOT_EXIST = "Aramaya calistiginiz danisan mevcut degildir.";
+    public static final String MEASUREMENT_NOT_EXIST = "Aramaya calistiginiz olcum kaydi mevcut degildir.";
+
+    public static final String MEASUREMENT_ALREADY_EXISTS = "Bugun icin olcum kaydi zaten mevcut.";
 
 }
