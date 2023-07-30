@@ -5,7 +5,6 @@ import com.batuhancopur.nutritioncontrolmanagementmicro.domain.measurement.model
 import com.batuhancopur.nutritioncontrolmanagementmicro.domain.measurement.port.PatientMeasurementPort;
 import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.adapters.measurement.jpa.entity.PatientMeasurementEntity;
 import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.adapters.measurement.jpa.repository.PatientMeasurementRepository;
-import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.adapters.patient.jpa.PatientInfoDataAdapter;
 import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.adapters.patient.jpa.entity.PatientInfoEntity;
 import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.adapters.patient.jpa.repository.PatientInfoRepository;
 import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.common.exception.DataNotFoundException;
@@ -38,6 +37,11 @@ public class PatientMeasureDataAdapter implements PatientMeasurementPort {
                 .weight(measurement.getWeight())
                 .height(measurement.getHeight())
                 .neck(measurement.getNeck())
+                .chest(measurement.getChest())
+                .rightArm(measurement.getRightArm())
+                .leftArm(measurement.getLeftArm())
+                .rightLeg(measurement.getRightLeg())
+                .leftLeg(measurement.getLeftLeg())
                 .bmi(measurement.getBmi())
                 .build();
 
@@ -61,6 +65,11 @@ public class PatientMeasureDataAdapter implements PatientMeasurementPort {
                 .weight(msr.getWeight())
                 .height(msr.getHeight())
                 .neck(msr.getNeck())
+                .chest(msr.getChest())
+                .rightArm(msr.getRightArm())
+                .leftArm(msr.getLeftArm())
+                .rightLeg(msr.getRightLeg())
+                .leftLeg(msr.getLeftLeg())
                 .bmi(msr.getBmi())
                 .build()).toList();
     }
@@ -83,6 +92,11 @@ public class PatientMeasureDataAdapter implements PatientMeasurementPort {
                     .weight(entity.getWeight())
                     .height(entity.getHeight())
                     .neck(entity.getNeck())
+                    .chest(entity.getChest())
+                    .rightArm(entity.getRightArm())
+                    .leftArm(entity.getLeftArm())
+                    .rightLeg(entity.getRightLeg())
+                    .leftLeg(entity.getLeftLeg())
                     .bmi(entity.getBmi())
                     .build();
         } catch (Exception e) {

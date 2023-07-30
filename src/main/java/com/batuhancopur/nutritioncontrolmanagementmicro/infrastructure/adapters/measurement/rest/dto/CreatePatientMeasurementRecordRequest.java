@@ -24,4 +24,14 @@ public class CreatePatientMeasurementRecordRequest {
     private BigDecimal hip;
     @Nonnull
     private BigDecimal neck;
+    @Nonnull
+    private BigDecimal chest;
+    @Nonnull
+    private BigDecimal leftArm;
+    @Nonnull
+    private BigDecimal rightArm;
+    @Nonnull
+    private BigDecimal leftLeg;
+    @Nonnull
+    private BigDecimal rightLeg;
 }

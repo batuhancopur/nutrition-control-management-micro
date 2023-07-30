@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("api/patient/info")
 @Tag(name = "Patient Info")
@@ -24,7 +26,7 @@ public class CreatePatientController {
     @Operation(summary = "Create new patient record")
     @ApiResponse(responseCode = "201")
     @PostMapping("/create")
-    public void createPatient(@RequestBody CreatePatientRequest request) throws DataNotFoundException {
+    public void createPatient(@RequestBody CreatePatientRequest request) throws DataNotFoundException, IOException {
         createPatientHandler.handle(toCommand(request));
     }
 

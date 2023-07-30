@@ -27,6 +27,11 @@ public class GetPatientMeasurementRecordListResponse {
                         .waist(msr.getWaist())
                         .hip(msr.getHip())
                         .neck(msr.getNeck())
+                        .chest(msr.getChest())
+                        .leftArm(msr.getLeftArm())
+                        .rightArm(msr.getRightArm())
+                        .leftLeg(msr.getLeftLeg())
+                        .rightLeg(msr.getRightLeg())
                         .patientId(msr.getPatientId())
                         .build()).toList())
                 .build();

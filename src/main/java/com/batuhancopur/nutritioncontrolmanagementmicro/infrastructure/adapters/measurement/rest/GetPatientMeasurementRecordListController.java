@@ -4,7 +4,6 @@ import com.batuhancopur.nutritioncontrolmanagementmicro.domain.common.command.Co
 import com.batuhancopur.nutritioncontrolmanagementmicro.domain.measurement.command.GetPatientMeasurementRecordListCommand;
 import com.batuhancopur.nutritioncontrolmanagementmicro.domain.measurement.model.Measurement;
 import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.adapters.measurement.rest.dto.GetPatientMeasurementRecordListResponse;
-import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.adapters.measurement.rest.dto.GetPatientMeasurementResponse;
 import com.batuhancopur.nutritioncontrolmanagementmicro.infrastructure.common.exception.DataNotFoundException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @RestController
