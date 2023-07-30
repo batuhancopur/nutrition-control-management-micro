@@ -31,6 +31,11 @@ public class CreatePatientMeasurementRecordHandler implements VoidCommandHandler
                         .weight(command.getWeight())
                         .height(command.getHeight())
                         .neck(command.getNeck())
+                        .chest(command.getChest())
+                        .rightArm(command.getRightArm())
+                        .leftArm(command.getLeftArm())
+                        .rightLeg(command.getRightLeg())
+                        .leftLeg(command.getLeftLeg())
                         .bmi(command.getWeight().divide(command.getHeight().pow(2), RoundingMode.CEILING))
                 .build());
     }

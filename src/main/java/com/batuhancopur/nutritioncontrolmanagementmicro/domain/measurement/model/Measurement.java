@@ -20,5 +20,10 @@ public class Measurement {
     private BigDecimal waist;
     private BigDecimal hip;
     private BigDecimal neck;
+    private BigDecimal chest;
+    private BigDecimal leftArm;
+    private BigDecimal rightArm;
+    private BigDecimal leftLeg;
+    private BigDecimal rightLeg;
     private BigDecimal bmi;
 }

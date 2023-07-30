@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("api/patient/measurement")
 @Tag(name = "Patient Measurement")
@@ -25,7 +27,7 @@ public class CreatePatientMeasurementController {
     @Operation(summary = "Create new patient measurement record")
     @ApiResponse(responseCode = "201")
     @PostMapping("/create")
-    public void createPatientMeasurementRecord(@RequestBody CreatePatientMeasurementRecordRequest request) throws DataNotFoundException {
+    public void createPatientMeasurementRecord(@RequestBody CreatePatientMeasurementRecordRequest request) throws DataNotFoundException, IOException {
         createPatientMeasurementRecord.handle(toCommand(request));
     }
 
@@ -37,6 +39,11 @@ public class CreatePatientMeasurementController {
                 .hip(request.getHip())
                 .waist(request.getWaist())
                 .neck(request.getNeck())
+                .chest(request.getChest())
+                .leftArm(request.getLeftArm())
+                .rightArm(request.getRightArm())
+                .leftLeg(request.getLeftLeg())
+                .rightLeg(request.getRightLeg())
                 .build();
     }
 

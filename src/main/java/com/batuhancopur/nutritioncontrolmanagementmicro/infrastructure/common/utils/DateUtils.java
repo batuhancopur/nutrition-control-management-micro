@@ -10,4 +10,8 @@ public final class DateUtils {
     public static long localDateToLongDate(LocalDate date) {
         return Long.parseLong(basicFormatter.format(date));
     }
+
+    public static LocalDate longDateToLocalDate(long date) {
+        return LocalDate.parse(String.valueOf(date), basicFormatter);
+    }
 }

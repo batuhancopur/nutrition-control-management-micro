@@ -39,6 +39,16 @@ public class PatientMeasurementEntity {
     private BigDecimal waist;
     @Column(name = "NECK", nullable = false)
     private BigDecimal neck;
+    @Column(name = "CHEST", nullable = false)
+    private BigDecimal chest;
+    @Column(name = "LEFT_ARM", nullable = false)
+    private BigDecimal leftArm;
+    @Column(name = "RIGHT_ARM", nullable = false)
+    private BigDecimal rightArm;
+    @Column(name = "LEFT_LEG", nullable = false)
+    private BigDecimal leftLeg;
+    @Column(name = "RIGHT_LEG", nullable = false)
+    private BigDecimal rightLeg;
     @Column(name = "BMI", nullable = false)
     private BigDecimal bmi;
 

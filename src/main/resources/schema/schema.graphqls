@@ -1,0 +1,23 @@
+type Query {
+    getPatientMeasurement(patientId: Int, measurementDate: Int): Measurement
+    getPatientMeasurementList(patientId: Int): [Measurement]
+}
+
+type Measurement {
+    patientId: Int
+    name: String
+    surname: String
+    measurementDate: String
+    weight: Float
+    height: Float
+    waist: Float
+    hip: Float
+    neck: Float
+    chest: Float
+    leftArm: Float
+    rightArm: Float
+    leftLeg: Float
+    rightLeg: Float
+    bmi: Float
+}
+
