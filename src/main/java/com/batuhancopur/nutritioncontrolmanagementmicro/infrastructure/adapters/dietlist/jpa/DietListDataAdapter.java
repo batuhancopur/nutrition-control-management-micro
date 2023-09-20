@@ -20,6 +20,9 @@ import java.util.Objects;
 
 import static com.batuhancopur.nutritioncontrolmanagementmicro.domain.common.exception.DietListException.DIET_LIST_NOT_EXIST;
 
+/**
+ * This class is an implementation of the {@link DietListPort} interface. It uses the Spring Data MongoDB library to interact with the database.
+ */
 @Service
 @RequiredArgsConstructor
 public class DietListDataAdapter implements DietListPort {
@@ -27,6 +30,11 @@ public class DietListDataAdapter implements DietListPort {
     private final DietListRepository dietListRepository;
     private final MongoTemplate mongoTemplate;
 
+    /**
+     * This method creates a new diet list in the database.
+     *
+     * @param dietList The diet list to be created.
+     */
     @Override
     public void createDietList(DietList dietList) {
         DietListEntity entity = DietListEntity.builder()
@@ -43,6 +51,14 @@ public class DietListDataAdapter implements DietListPort {
 
     }
 
+    /**
+     * This method retrieves a diet list from the database based on the patient ID and creation date.
+     *
+     * @param patientId The ID of the patient.
+     * @param createdDate The date the diet list was created.
+     * @return The diet list.
+     * @throws DataNotFoundException If the diet list does not exist.
+     */
     @Override
     public DietList getDietList(Long patientId, LocalDate createdDate) throws DataNotFoundException {
 
@@ -64,6 +80,5 @@ public class DietListDataAdapter implements DietListPort {
                         .build()).toList())
                 .build();
     }
-
 
 }

@@ -21,6 +21,12 @@ public class PatientMeasureDataAdapter implements PatientMeasurementPort {
     private final PatientMeasurementRepository measurementRepository;
     private final PatientInfoRepository patientInfoRepository;
 
+    /**
+     * This method creates a new measurement record in the database.
+     *
+     * @param measurement The measurement record to be created.
+     * @throws DataNotFoundException If the patient does not exist.
+     */
     @Override
     public void createPatientMeasurementRecord(Measurement measurement) throws DataNotFoundException {
 
@@ -48,6 +54,13 @@ public class PatientMeasureDataAdapter implements PatientMeasurementPort {
         measurementRepository.save(entity);
     }
 
+    /**
+     * This method retrieves a measurement record from the database based on the patient ID and measurement date.
+     *
+     * @param patientId The ID of the patient.
+     * @return The measurement record.
+     * @throws DataNotFoundException If the measurement record does not exist.
+     */
     @Override
     public List<Measurement> getPatientMeasurementRecordList(Long patientId) throws DataNotFoundException {
 
@@ -74,6 +87,14 @@ public class PatientMeasureDataAdapter implements PatientMeasurementPort {
                 .build()).toList();
     }
 
+    /**
+     * This method retrieves a measurement record from the database based on the patient ID and measurement date.
+     *
+     * @param patientId The ID of the patient.
+     * @param measurementDate The date the measurement was taken.
+     * @return The measurement record.
+     * @throws DataNotFoundException If the measurement record does not exist.
+     */
     @Override
     public Measurement getPatientMeasurementRecord(Long patientId, LocalDate measurementDate) throws DataNotFoundException {
 

@@ -15,6 +15,11 @@ public class CreateDietListHandler implements VoidCommandHandler<CreateDietListC
 
     private final DietListPort dietListPort;
 
+    /**
+     * @apiNote Create diet list of patient
+     * @param command
+     * @throws DataNotFoundException
+     */
     @Override
     public void handle(CreateDietListCommand command) throws DataNotFoundException {
 
